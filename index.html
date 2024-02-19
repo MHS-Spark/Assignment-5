@@ -11,6 +11,15 @@
         :root {
             background-color: white;
         }
+        li {
+            display: flex;
+            justify-content: space-between;
+        }
+        li>p {
+            padding-left: 24px;
+            padding-right: 24px;
+            color: black;
+        }
     </style>
 </head>
 
@@ -80,7 +89,8 @@
                 </div>
                 <img src="images/cupon-devider.png" alt="">
                 <div class="flex flex-col justify-center items-center px-12">
-                    <p class="text-black text-3xl">NEW15</p>
+                    <!-- --------------------------------------------------------------------- -->
+                    <p id="new15" class="text-black text-3xl">NEW15</p>
                     <p class="text-gray-600">Coupon Code</p>
                 </div>
             </div>
@@ -92,7 +102,8 @@
                 </div>
                 <img src="images/cupon-devider.png" alt="">
                 <div class="flex flex-col justify-center items-center px-12">
-                    <p class="text-black text-3xl">Couple 20</p>
+                    <!-- ------------------------------------------------------------------------------- -->
+                    <p id="couple-20" class="text-black text-3xl">Couple 20</p>
                     <p class="text-gray-600">Coupon Code</p>
                 </div>
             </div>
@@ -106,7 +117,7 @@
         <p class="text-black text-4xl font-bold text-center pb-6 pt-[100px]">P.H Paribahan</p>
         <p class="text-center pb-6">Yes, you can run unit tests and view the results directly within the app. The
             integrated testing features allow for a streamlined .</p>
-            <!-- portion 1 -->
+        <!-- portion 1 -->
         <div class="flex justify-around w-5/6 mx-auto rounded-2xl bg-white">
             <div class="w-3/5">
                 <div class="flex justify-between pt-8">
@@ -120,7 +131,8 @@
                     <div>
                         <button class="btn bg-green-300 text-[#1DD100] border-0">
                             <img src="images/seat-green.png" alt="">
-                            <span class="text-[#1DD100]">40</span> Seats left
+                            <!-- --------------------------------------------------------------- -->
+                            <span id="total-seats" class="text-[#1DD100] total-seats">8</span> Seats left
                         </button>
                     </div>
                 </div>
@@ -151,7 +163,10 @@
             <img src="images/info-devider.png" alt="">
             <div class="w-fit flex flex-col justify-center items-center gap-2">
                 <img src="images/fare.png" alt="">
-                <p class="text-black text-2xl font-bold">550 Taka</p>
+                <p class="text-black text-2xl font-bold">
+                    <span class="text-black text-2xl font-bold">550</span>
+                    Taka
+                </p>
                 <p>Per Seat</p>
             </div>
         </div>
@@ -170,20 +185,21 @@
                         <p class="text-[#1DD100]">Selected</p>
                     </div>
                 </div>
+                <!-- -------------------------------------------------------------------------------------- -->
                 <div class="flex justify-between mt-6">
                     <div class="ml-6 grid grid-cols-3 gap-6">
                         <p class="flex items-center px-0">A</p>
-                        <button class="btn bg-[#F7F8F8] border-0 px-10">A1</button>
-                        <button class="btn bg-[#F7F8F8] border-0 px-10">A2</button>
+                        <button class="btn add-btn bg-[#F7F8F8] border-0 px-10">A1</button>
+                        <button class="btn add-btn bg-[#F7F8F8] border-0 px-10">A2</button>
                         <p class="flex items-center px-0">B</p>
-                        <button class="btn bg-[#F7F8F8] border-0 px-10">B1</button>
-                        <button class="btn bg-[#F7F8F8] border-0 px-10">A2</button>
+                        <button class="btn add-btn bg-[#F7F8F8] border-0 px-10">B1</button>
+                        <button class="btn add-btn bg-[#F7F8F8] border-0 px-10">A2</button>
                     </div>
                     <div class="grid grid-cols-2 gap-6 mr-6">
-                        <button class="btn bg-[#F7F8F8] border-0 px-10">A3</button>
-                        <button class="btn bg-[#F7F8F8] border-0 px-10">A4</button>
-                        <button class="btn bg-[#F7F8F8] border-0 px-10">B3</button>
-                        <button class="btn bg-[#F7F8F8] border-0 px-10">B4</button>
+                        <button class="btn add-btn bg-[#F7F8F8] border-0 px-10">A3</button>
+                        <button class="btn add-btn bg-[#F7F8F8] border-0 px-10">A4</button>
+                        <button class="btn add-btn bg-[#F7F8F8] border-0 px-10">B3</button>
+                        <button class="btn add-btn bg-[#F7F8F8] border-0 px-10">B4</button>
                     </div>
                 </div>
             </div>
@@ -192,22 +208,35 @@
                 <p class="text-black text-xl ml-6 mb-6 pr-60 py-4 border-b-2 border-dashed">Select Your Seat</p>
                 <div class="bg-[#F7F8F8] ml-6 border-l-2 border-dashed rounded-lg">
                     <div class="flex justify-between pt-8 pb-4 mb-4 border-b-2 border-dashed">
-                        <p class="text-black pl-6">Seat <span class="bg-[#1DD100] text-black">0</span></p>
+                        <!-- -------------------------------------------------------------------------------- -->
+                        <p class="text-black pl-6">Seat
+                            <span id="seat-taken" class="bg-[#1DD100] text-black">0</span>
+                        </p>
                         <p class="text-black">Class</p>
                         <p class="text-black pr-6">Price</p>
                     </div>
-                    <ul class="flex justify-between border-b-2 border-dashed pb-4">
+                    <!-- -------------------------------------------------------------------------------------- -->
+                    <ul id="selected-place-container" class="selected-place-container">
 
                     </ul>
                     <div class="flex justify-between py-4">
                         <p class="text-black pl-6">Total Price</p>
-                        <p class="text-black pr-6">BDT <span class="text-black">0</span></p>
+                        <p class="text-black pr-6">BDT
+                            <!-- ------------------------------------------------------------------------------ -->
+                            <span id="total-price" class="text-black">0</span>
+                        </p>
                     </div>
-                    <input class="bg-white ml-6 mb-4 pl-4 py-4 text-black rounded-lg" type="text" placeholder="Have any coupon?" value="">
-                    <button class="btn text-white bg-[#1DD100] border-0">Apply</button>
+                    <!-- ------------------------------------------------------------------------------ -->
+                    <input id="coupon-input" class="bg-white ml-6 mb-4 pl-4 py-4 text-black rounded-lg" type="text"
+                        placeholder="Have any coupon?" value="">
+                    <!-- ------------------------------------------------------------------------------ -->
+                    <button id="apply" class="btn text-white bg-[#1DD100] border-0">Apply</button>
                     <div class="flex justify-between pb-4">
                         <p class="text-black pl-6">Grand Total</p>
-                        <p class="text-black pr-6">BDT <span class="text-black">0</span></p>
+                        <p class="text-black pr-6">BDT
+                            <!-- ------------------------------------------------------------------------------ -->
+                            <span id="grand-total" class="text-black">0</span>
+                        </p>
                     </div>
                 </div>
             </div>
